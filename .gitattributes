@@ -1,0 +1,4 @@
+# install.sh runs inside Linux dev containers. Keep LF line endings everywhere,
+# even when Windows git (core.autocrlf) checks the repo out: a CRLF shell
+# script fails with "$'\r': command not found".
+* text=auto eol=lf
