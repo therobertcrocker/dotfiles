@@ -18,4 +18,5 @@ cp starship.toml ~/.config/starship.toml
 starship_init='eval "$(starship init zsh)"'
 grep -qxF "$starship_init" ~/.zshrc 2>/dev/null || echo "$starship_init" >> ~/.zshrc
 
-sudo chsh -s "$(command -v zsh)" "$USER"
+# id -un, not $USER: $USER isn't always set when Dev Containers runs this script.
+sudo chsh -s "$(command -v zsh)" "$(id -un)"
